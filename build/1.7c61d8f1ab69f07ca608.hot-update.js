@@ -1,1 +1,0 @@
-webpackHotUpdate(1,[function(e,t,a){"use strict";a(60);var d=a(65),n=(a(55),a(56),document.getElementById("app")),c='<div id="test"></div>';n.innerHTML=c;var i=document.getElementById("test");d(i),i.rotateZ=45,i.scaleY=1.5,i.scaleX=1.5}]);
