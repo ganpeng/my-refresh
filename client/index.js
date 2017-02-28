@@ -112,6 +112,7 @@ Transform(target, true)
 
 let loading = false
 let noneData = false
+let index = 0
 
 
 const allayTouch = new AlloyTouch({
@@ -123,6 +124,7 @@ const allayTouch = new AlloyTouch({
   factor: 1,
   max: 0,
   min: (-1 * parseInt(getComputedStyle(target).height)) + window.innerHeight - 100,  // 此处应该减去header和footer的高度，总共100
+
   step: 40,
   touchStart: () => { resetMin() },
   change: function(v) {
@@ -152,6 +154,11 @@ function resetMin() {
 function loadMore() {
   setTimeout(() => {
     dataList.innerHTML += data
+    if (index > 5) {
+      noneData = true
+    } else {
+      index++
+    }
     loading = false
     loadmore.classList.remove('show')
     resetMin()
